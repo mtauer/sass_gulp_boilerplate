@@ -15,14 +15,14 @@ var minify = require('gulp-cssnano');
 
 var paths = {
   input: 'src/**/*',
-  output: 'dist/',
+  output: 'public/',
   styles: {
     input: 'src/scss/**/*.{scss,sass}',
-    output: 'dist/css/'
+    output: 'public/css/'
   },
   static: {
     input: 'src/static/*',
-    output: 'dist/'
+    output: 'public/'
   }
 };
 
