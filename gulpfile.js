@@ -20,8 +20,8 @@ var paths = {
     input: 'src/scss/**/*.{scss,sass}',
     output: 'public/css/'
   },
-  static: {
-    input: 'src/static/*',
+  staticFiles: {
+    input: 'src/**/*.{html,svg,jpg,png,woff}',
     output: 'public/'
   }
 };
@@ -42,6 +42,12 @@ var banner = {
         ' | <%= package.repository.url %>' +
         ' */\n'
 };
+
+// Copy static files
+gulp.task('build:staticFiles', [], function() {
+  return gulp.src(paths.staticFiles.input)
+    .pipe(gulp.dest(paths.staticFiles.output));
+});
 
 // Process, lint, and minify Sass files
 gulp.task('build:styles', [], function() {
@@ -85,6 +91,7 @@ gulp.task('refresh', ['compile'], function () {
 
 // Compile files
 gulp.task('compile', [
+    'build:staticFiles',
     'build:styles'
 ]);
 
