@@ -1,6 +1,7 @@
 @import 'constants';
 
 html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px; // 1rem = 10px
 }
 
@@ -8,11 +9,17 @@ body {
   background-color: $color-white;
   color: $color-blue;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+}
+
+h1 {
+  font-weight: 300;
 }
 
 .button {
+  border: 0;
   border-radius: $border-radius;
+  padding: 8px 12px;
   transition: background-color .4s;
 
   .button-large {
